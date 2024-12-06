@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Corridas</title>
+</head>
+<body>
+    <h1>Lista de Corridas</h1>
+    <ul>
+        {% for corrida in object_list %}
+        <li>
+            <a href="{{ corrida.get_absolute_url }}">{{ corrida.nome }}</a> - {{ corrida.data }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'corrida-adicionar' %}">Adicionar Nova Corrida</a>
+    <a href="{% url 'piloto-list' %}">Gerenciar Pilotos</a>
+    <li><a href="{% url 'pagina-inicial' %}">Páginal Inicial</a></li>
+</body>
+</html>

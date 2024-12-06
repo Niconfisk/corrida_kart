@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Corrida</title>
+</head>
+<body>
+    <h1>Detalhes da Corrida</h1>
+    <p><strong>Nome:</strong> {{ object.nome }}</p>
+    <p><strong>Data:</strong> {{ object.data }}</p>
+    <h2>Pilotos Participantes:</h2>
+    <ul>
+        {% for piloto in object.pilotos.all %}
+        <li>{{ piloto.nome }} - {{ piloto.equipe }}</li>
+        {% empty %}
+        <li>Nenhum piloto cadastrado.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'corrida-editar' object.id %}">Editar</a> |
+    <a href="{% url 'corrida-deletar' object.id %}">Deletar</a> |
+    <a href="{% url 'corrida-list' %}">Voltar à Lista</a>
+</body>
+</html>

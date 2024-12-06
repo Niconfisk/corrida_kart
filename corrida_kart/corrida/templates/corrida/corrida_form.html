@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Nova Corrida{% endblock %}</title>
+</head>
+<body>
+    <h1>{% if object %}Editar Corrida{% else %}Adicionar Nova Corrida{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'corrida-list' %}">Cancelar</a>
+</body>
+</html>

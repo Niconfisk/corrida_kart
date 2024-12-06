@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Piloto</title>
+</head>
+<body>
+    <h1>Detalhes do Piloto</h1>
+    <p><strong>Nome:</strong> {{ object.nome }}</p>
+    <p><strong>Idade:</strong> {{ object.idade }}</p>
+    <p><strong>Equipe:</strong> {{ object.equipe }}</p>
+    <a href="{% url 'piloto-editar' object.id %}">Editar</a> |
+    <a href="{% url 'piloto-deletar' object.id %}">Deletar</a> |
+    <a href="{% url 'piloto-list' %}">Voltar à Lista</a>
+</body>
+</html>
